@@ -1,7 +1,7 @@
 import random
 
-msgs1Tiro = ["as alcanzado al enemigo","as herido al enemigo","you lose"]
-msgs2Tiro = ["un herido uno fuera del mapa","que mala punteria tienes","inpresionante el otro barrio necesita 2 casas mas"]
+msgs1Tiro = ["as alcanzado al enemigo","as herido al enemigo","you lose","has herido un amigo eres peor quel diablo","tienes un oficial fuera genial:)"]
+msgs2Tiro = ["un herido uno fuera del mapa","que mala punteria tienes","inpresionante el otro barrio necesita 2 casas mas",""]
 
 def mensage1():
     mes1 = random.choice(msgs1Tiro)
