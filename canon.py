@@ -42,6 +42,7 @@ opciones_de_tiro = {
 }
 
 def runMainFunccion():
+    
     disparo = (input("introduce el numero de disparos(1o2) y la direccion(delante:w a la derecha:d a la izquierda:a detras:s): "))
       
     if disparo in opciones_de_tiro:
