@@ -1,44 +1,51 @@
 import random
 
-msgs1Tiro = ["as alcanzado al enemigo","as herido al enemigo","you lose","has herido un amigo eres peor quel diablo","tienes un oficial fuera genial:)"]
-msgs2Tiro = ["un herido uno fuera del mapa","que mala punteria tienes","inpresionante el otro barrio necesita 2 casas mas",""]
+msgs1Tiro = [
+  {"text": "as alcanzado al enemigo ha muerto", "value": 25},
+  {"text": "as herido al enemigo", "value": 10},
+  {"text": "you lose", "value": -10},
+  {"text": "has herido un amigo eres peor quel diablo", "value":-50},
+  {"text": "tienes un oficial fuera oficial:)", "value": 50}
+]
 
-def mensage1():
-    mes1 = random.choice(msgs1Tiro)
-    print(mes1)
+msgs2Tiro = [
+  {"text": "un herido uno fuera del mapa", "value": 35},
+  {"text": "que mala punteria tienes", "value": -20},
+  {"text": "inpresionante el otro barrio necesita 2 casas mas", "value": 50},
+  {"text": "un general herido ", "value": 30}
+]
 
-def mensage2():
-    mes2 = random.choice(msgs2Tiro)
-    print(mes2)
+doblones = 0
 
+def calculateDoblones(mes):
+    doblones = doblones + mes["value"]
+
+def mensaje1():
+    mes = random.choice(msgs1Tiro)
+    print(mes["text"])
+  
+
+def mensaje2():
+    mes = random.choice(msgs2Tiro)
+    print(mes["text"])
+   
+  
+opciones_de_tiro = {
+    "1w": mensaje1,
+    "1d": mensaje1,
+    "1a": mensaje1,
+    "1s": mensaje1,
+    "2w": mensaje2,
+    "2d": mensaje2,
+    "2a": mensaje2,
+    "2s": mensaje2
+}
 
 def runMainFunccion():
     disparo = (input("introduce el numero de disparos(1o2) y la direccion(delante:w a la derecha:d a la izquierda:a detras:s): "))
-
-    if disparo == "1w":
-        mensage1()
-
-    elif disparo == "1d":
-        mensage1()
-
-    elif disparo == "1s":
-        mensage1()
-
-    elif disparo == "1a":
-        mensage1()
-
-    elif disparo == "2w":
-        mensage2()
-
-    elif disparo == "2d":
-        mensage2()
-
-    elif disparo == "2s":
-        mensage2()
-
-    elif disparo == "2a":
-        mensage2()
-
+      
+    if disparo in opciones_de_tiro:
+        opciones_de_tiro[disparo]()    
     else:
         print("no es lo que te dije ")   
 

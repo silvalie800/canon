@@ -14,3 +14,4 @@ running = True
 while running :
 	runMainFunction()
 	running = checkExit()
+
